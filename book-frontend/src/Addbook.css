@@ -1,0 +1,23 @@
+#main{
+    background-color: antiquewhite;
+    height: 1000px;
+}
+
+#main > form > input{
+    height: 40px;
+    width: 20%;
+    margin-top: 10px;
+}
+
+#main > form > textarea{
+    height: 40px;
+    width: 20%;
+    margin-top: 10px;
+}
+
+#main > form > input:nth-child(26){
+    background-color: brown;
+    color: white;
+    font-weight: 500;
+    font-size: 18px;
+}

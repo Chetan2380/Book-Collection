@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from 'react-router-dom';
 import Api from "./axiosconfig";
 import toast from "react-hot-toast";
+import './Addbook.css';
 
 function AddBook(){
     const router=useNavigate();
@@ -74,7 +75,7 @@ function AddBook(){
       }, [bookData]);
 
   return (
-    <div>
+    <div id="main">
         <form onSubmit={handleSubmit}>
             <h1>Add Book</h1>
             <label>Image Url:</label><br/>
