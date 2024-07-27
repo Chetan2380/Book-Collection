@@ -1,0 +1,38 @@
+#allbooksshow{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+#bookshow{
+    width: 30%;
+    height: 850px;
+    border: 2px solid black;
+    margin-top: 20px;
+}
+
+#bookshow > img{
+    width: 86%;
+    height: 50%;
+    margin-top: 10px;
+}
+
+#bookshow > p{
+    font-size: 17.2px;
+    line-height: 1.5;
+}
+
+#bookshow > p:nth-child(2){
+    margin-top: 20px;
+}
+
+#main > button{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 200px;
+    height: 50px;
+    font-size: 18px;
+    font-weight: 700;
+    background-color:brown;
+    color: white;
+}
