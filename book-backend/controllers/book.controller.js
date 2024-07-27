@@ -49,8 +49,11 @@ export const AddBook = async (req, res) => {
   export const GetSingleBook = async (req, res) => {
     try {
       const { bookId } = req.body;
+      if (!bookId) {
+        return res.json({ success: false, error: "Book id is required." });
+      }
       const book = await Book.findById(bookId);
-      res.json({ success: true, product });
+      res.json({ success: true, book });
     } catch (error) {
       return res.json({ error, success: false });
     }

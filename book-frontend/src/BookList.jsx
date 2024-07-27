@@ -35,13 +35,11 @@ function Booklist(){
                 </div>):(
                     <div id="allbooksshow">
                     {allBooks.map((book)=>(
-                        <div id="bookshow">
+                        <div id="bookshow" onClick={()=>router(`/singlebook/${book._id}`)}>
                             <img src={book.image}/>
                             <p><b>Title</b>: {book.title}</p>
                             <p><b>Author</b>: {book.author}</p>
-                            <p><b>Published Year</b>: ₹{book.publishedYear}</p>
-                            <p><b>Genre</b>: {book.genre}</p>
-                            <p><b>Summary</b>: {book.summary}</p>
+                            <p><b>Published Year</b>: {book.publishedYear}</p>
                         </div>
                     ))}
                 </div>

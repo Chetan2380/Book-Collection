@@ -1,23 +1,23 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom';
 import Api from './axiosconfig';
-import './Booklist.css';
+import './singlebook.css';
 
 const SingleBook = () => {
     const {id}=useParams();
-    const[allBooks,setAllBooks]=useState([]);
+    const[singlebook,setSinglebook]=useState([]);
     const [loading, setLoading] = useState(false);
-    console.log(allBooks);
+    console.log(singlebook);
     const router = useNavigate();
 
-    async function GetBook(){
+    async function GetSingleBook(){
         setLoading(true);
         try{
-            const response = await Api.get("/book/getsinglebook")
+            const response = await Api.post("/book/getsinglebook",{bookId: id});
             console.log(response)
             if(response.data.success){
                 setLoading(false);
-                setAllBooks(response.data.books);
+                setSinglebook([response.data.book]);
             } 
         }
         catch(error){
@@ -26,21 +26,23 @@ const SingleBook = () => {
     }
 
     useEffect(()=>{
-        GetBook()},[]);
+        if(id){
+            GetSingleBook();
+        }
+       },[id]);
 
     return(
         <div id="main">
-            <h1>All Books</h1>
                 {loading?(<div>
                     <h1>Loading....</h1>                    
                 </div>):(
                     <div id="allbooksshow">
-                    {allBooks.map((book)=>(
-                        <div id="bookshow">
+                    {singlebook.map((book)=>(
+                        <div id="sb-bookshow">
+                            <p><b>{book.title}</b></p>
                             <img src={book.image}/>
-                            <p><b>Title</b>: {book.title}</p>
                             <p><b>Author</b>: {book.author}</p>
-                            <p><b>Published Year</b>: ₹{book.publishedYear}</p>
+                            <p><b>Published Year</b>: {book.publishedYear}</p>
                             <p><b>Genre</b>: {book.genre}</p>
                             <p><b>Summary</b>: {book.summary}</p>
                         </div>

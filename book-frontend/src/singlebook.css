@@ -1,0 +1,46 @@
+#main{
+    background-color: antiquewhite;
+}
+
+#allbooksshow{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+#sb-bookshow{
+    width: 50%;
+    height: 1300px;
+    /* border: 2px solid black; */
+    margin-top: 20px;
+}
+
+#sb-bookshow > img{
+    width: 76%;
+    height: 50%;
+    margin-top: 10px;
+}
+
+#sb-bookshow > p{
+    font-size: 22px;
+    line-height: 2;
+}
+
+#sb-bookshow > p:nth-child(1){
+    font-size: 40px;
+}
+
+#sb-bookshow > p:nth-child(3){
+    margin-top: 30px;
+}
+
+#main > button{
+    margin-top: 80px;
+    margin-bottom: 20px;
+    width: 200px;
+    height: 50px;
+    font-size: 18px;
+    font-weight: 700;
+    background-color:brown;
+    color: white;
+}

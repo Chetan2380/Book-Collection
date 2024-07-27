@@ -6,20 +6,24 @@
 
 #bookshow{
     width: 30%;
-    height: 850px;
+    height: 650px;
     border: 2px solid black;
     margin-top: 20px;
 }
 
+#bookshow:hover{
+    cursor: pointer;
+}
+
 #bookshow > img{
     width: 86%;
-    height: 50%;
+    height: 67%;
     margin-top: 10px;
 }
 
 #bookshow > p{
-    font-size: 17.2px;
-    line-height: 1.5;
+    font-size: 20px;
+    line-height: 2;
 }
 
 #bookshow > p:nth-child(2){
