@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from 'react-router-dom';
-import Api from "./axiosconfig";
+import Api from "../axiosconfig";
 import toast from "react-hot-toast";
-import './Addbook.css';
+import '../styles/Addbook.css';
 
 function AddBook(){
     const router=useNavigate();

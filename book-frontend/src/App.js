@@ -1,9 +1,9 @@
 import './App.css';
-import AddBook from './AddBook';
+import AddBook from './components/AddBook';
 import { Route, Routes } from 'react-router-dom';
-import Booklist from './BookList';
-import SingleBook from './SingleBook';
-import Navbar from './Navbar';
+import Booklist from './components/BookList';
+import SingleBook from './components/SingleBook';
+import Navbar from './components/Navbar';
 
 function App() {
   return (

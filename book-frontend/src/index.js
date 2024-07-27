@@ -5,12 +5,10 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from "react-router-dom";
 import {Toaster} from "react-hot-toast";
-import MyBookContextProvider from './context/book.context';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <MyBookContextProvider>
       <BrowserRouter>
         <Toaster
                 position="top-center"
@@ -39,7 +37,6 @@ root.render(
           />
         <App />
       </BrowserRouter>
-    </MyBookContextProvider>
   </React.StrictMode>
 );
 

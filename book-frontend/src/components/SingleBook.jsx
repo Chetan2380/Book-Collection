@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom';
-import Api from './axiosconfig';
-import './singlebook.css';
+import Api from '../axiosconfig';
+import '../styles/singlebook.css';
 
 const SingleBook = () => {
     const {id}=useParams();

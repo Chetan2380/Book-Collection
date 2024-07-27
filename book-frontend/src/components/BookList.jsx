@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import Api from "./axiosconfig";
-import './Booklist.css';
+import Api from "../axiosconfig";
+import '../styles/Booklist.css';
 
 function Booklist(){
     const router=useNavigate();
