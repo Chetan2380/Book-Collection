@@ -75,7 +75,7 @@ function AddBook(){
       }, [bookData]);
 
   return (
-    <div id="main">
+    <div id="ab-main">
         <form onSubmit={handleSubmit}>
             <h1>Add Book</h1>
             <label>Image Url:</label><br/>
