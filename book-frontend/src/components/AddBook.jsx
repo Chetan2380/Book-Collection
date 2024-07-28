@@ -41,7 +41,6 @@ function AddBook(){
                 toast.error("All fields are mandatory.");
             }
         } catch (error) {
-            // error =  { data : { success : false, message : "All fields are mandatory."}}
             toast.error(error.response.data.error);
         }
     }

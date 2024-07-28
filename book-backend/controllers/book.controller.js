@@ -15,7 +15,6 @@ export const AddBook = async (req, res) => {
       if (!image || !title || !author || !publishedYear || !genre || !summary) {
         return res.json({ success: false, error: "All fields are required." });
       }
-      // check to check title is exists - findOne / find
       const isTitleExist = await Book.findOne({ title: title });
       console.log(isTitleExist, "isTitleExist");
       if (isTitleExist) {
