@@ -9,7 +9,7 @@ app.use(morgan("combined"));
 app.use(
   cors({
     credentials: true,
-    origin: ["http://localhost:3000"],
+    origin: ["https://book-collection-sable.vercel.app/"],
   })
 );
 dotenv.config();
