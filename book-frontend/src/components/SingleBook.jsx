@@ -40,10 +40,10 @@ const SingleBook = () => {
                     <div className="book-details">
                         <h1 className="book-title">{singleBook.title}</h1>
                         <img className="book-image" src={singleBook.image} alt={singleBook.title} />
-                        <p><strong>Author:</strong> {singleBook.author}</p>
-                        <p><strong>Published Year:</strong> {singleBook.publishedYear}</p>
-                        <p><strong>Genre:</strong> {singleBook.genre}</p>
-                        <p><strong>Summary:</strong> {singleBook.summary}</p>
+                        <p><b>{singleBook.author}</b></p>
+                        <p><b>{singleBook.publishedYear}</b></p>
+                        <p><b>{singleBook.genre}</b></p>
+                        <p>{singleBook.summary}</p>
                         {singleBook.linktopdf && (
                             <a href={singleBook.linktopdf} target="_blank" rel="noopener noreferrer" className="pdf-link-button">
                                 View PDF

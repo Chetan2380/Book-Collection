@@ -41,7 +41,7 @@ function Booklist() {
                             className="book-item"
                             onClick={() => navigate(`/singlebook/${book._id}`)}
                         >
-                            <img src={book.image} alt={book.title} className="book-image" />
+                            <img src={book.image} alt={book.title} />
                             <p><b>{book.title}</b></p>
                             <p>Author : {book.author}</p>
                             <p>Year : {book.publishedYear}</p>

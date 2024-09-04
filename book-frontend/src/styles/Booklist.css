@@ -45,9 +45,10 @@
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
-.book-image {
+.book-item > img {
     width: 100%;
-    height: auto;
+    height: 420px; 
+    object-fit: cover; 
     border-radius: 4px;
 }
 
