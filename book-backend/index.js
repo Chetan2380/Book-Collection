@@ -9,7 +9,7 @@ app.use(morgan("combined"));
 app.use(
   cors({
     credentials: true,
-    origin: ["https://book-collection-sable.vercel.app/"],
+    origin: ["https://book-collection-sable.vercel.app"],
   })
 );
 dotenv.config();
