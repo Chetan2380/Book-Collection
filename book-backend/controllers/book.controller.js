@@ -11,8 +11,8 @@ export const GetAllBooks = async (req,res) =>{
 
 export const AddBook = async (req, res) => {
     try {
-      const { image,title, author, publishedYear, genre, summary } = req.body.bookData;
-      if (!image || !title || !author || !publishedYear || !genre || !summary) {
+      const { image,title, author, publishedYear, genre, summary, linktopdf } = req.body.bookData;
+      if (!image || !title || !author || !publishedYear || !genre || !summary || !linktopdf) {
         return res.json({ success: false, error: "All fields are required." });
       }
       const isTitleExist = await Book.findOne({ title: title });
@@ -30,7 +30,8 @@ export const AddBook = async (req, res) => {
         author: author,
         publishedYear: publishedYear,
         genre:genre,
-        summary:summary
+        summary:summary,
+        linktopdf:linktopdf
       });
   
       const responseFromDb = await newBook.save();

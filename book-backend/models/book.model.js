@@ -6,7 +6,8 @@ const bookSchema = new Schema({
     author: { type: String, required: true },
     publishedYear : { type: Number, required: true } ,
     genre: { type: String, required: true },
-    summary : String
+    summary : String,
+    linktopdf : { type: String, required: true }
 });
 
 const Book = model("Books", bookSchema);

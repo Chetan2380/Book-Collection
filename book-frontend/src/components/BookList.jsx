@@ -3,48 +3,58 @@ import { useNavigate } from "react-router-dom";
 import Api from "../axiosconfig";
 import '../styles/Booklist.css';
 
-function Booklist(){
-    const router=useNavigate();
-    const[allBooks,setAllBooks]=useState([]);
+function Booklist() {
+    const navigate = useNavigate();
+    const [allBooks, setAllBooks] = useState([]);
     const [loading, setLoading] = useState(false);
-    console.log(allBooks);
 
-    async function GetBook(){
+    async function fetchBooks() {
         setLoading(true);
-        try{
-            const response = await Api.get("/book/getallbook")
-            console.log(response)
-            if(response.data.success){
-                setLoading(false);
+        try {
+            const response = await Api.get("/book/getallbook");
+            if (response.data.success) {
                 setAllBooks(response.data.books);
-            } 
-        }
-        catch(error){
-            console.log(error);
+            }
+        } catch (error) {
+            console.error(error);
+        } finally {
+            setLoading(false);
         }
     }
 
-    useEffect(()=>{
-        GetBook()},[]);
+    useEffect(() => {
+        fetchBooks();
+    }, []);
 
-    return(
-        <div id="main">
-            <h1>All Books</h1>
-                {loading?(<div>
-                    <h1>Loading....</h1>                    
-                </div>):(
-                    <div id="allbooksshow">
-                    {allBooks.map((book)=>(
-                        <div id="bookshow" onClick={()=>router(`/singlebook/${book._id}`)}>
-                            <img src={book.image}/>
-                            <p><b>Title</b>: {book.title}</p>
-                            <p><b>Author</b>: {book.author}</p>
-                            <p><b>Published Year</b>: {book.publishedYear}</p>
+    return (
+        <div className="booklist-container">
+            <h1 className="booklist-title">All Books</h1>
+            {loading ? (
+                <div className="loading-message">
+                    <h1>Loading...</h1>
+                </div>
+            ) : (
+                <div className="book-list">
+                    {allBooks.map((book) => (
+                        <div
+                            key={book._id}
+                            className="book-item"
+                            onClick={() => navigate(`/singlebook/${book._id}`)}
+                        >
+                            <img src={book.image} alt={book.title} className="book-image" />
+                            <p><b>{book.title}</b></p>
+                            <p>Author : {book.author}</p>
+                            <p>Year : {book.publishedYear}</p>
                         </div>
                     ))}
                 </div>
-                )} 
-                <button onClick={()=>router("/add-book")}>Add More Books</button>
+            )}
+            <button
+                className="add-book-button"
+                onClick={() => navigate("/add-book")}
+            >
+                Add More Books
+            </button>
         </div>
     );
 }

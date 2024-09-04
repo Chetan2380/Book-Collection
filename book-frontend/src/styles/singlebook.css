@@ -1,46 +1,74 @@
-#main{
-    background-color: antiquewhite;
-}
+/* singlebook.css */
 
-#allbooksshow{
+.single-book-container {
+    padding: 20px;
+    background-color: #f8f9fa;
+    min-height: 100vh;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
 }
 
-#sb-bookshow{
-    width: 50%;
-    height: 1100px;
-    /* border: 2px solid black; */
-    margin-top: 20px;
+.loading-message {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
+    color: #6c757d;
+    font-size: 1.5rem;
 }
 
-#sb-bookshow > img{
-    width: 76%;
-    height: 50%;
-    margin-top: 10px;
+.book-details {
+    max-width: 600px;
+    background-color: #ffffff;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
 }
 
-#sb-bookshow > p{
-    font-size: 22px;
-    line-height: 2;
-}
-
-#sb-bookshow > p:nth-child(1){
-    font-size: 40px;
-}
-
-#sb-bookshow > p:nth-child(3){
-    margin-top: 30px;
-}
-
-#main > button{
-    margin-top: 80px;
+.book-title {
+    font-size: 2rem;
     margin-bottom: 20px;
-    width: 200px;
-    height: 50px;
+    color: #343a40;
+    text-align: center;
+}
+
+.book-image {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.book-details p {
+    font-size: 1rem;
+    margin: 10px 0;
+    color: #495057;
+    text-align: left;
+}
+
+.book-details p strong {
+    color: #343a40;
+}
+
+.pdf-link-button {
+    display: inline-block;
+    margin: 20px 0;
+    padding: 10px 20px;
     font-size: 18px;
-    font-weight: 700;
-    background-color:brown;
-    color: white;
+    font-weight: 600;
+    color: #ffffff;
+    background-color: #dbaf96;
+    border: none;
+    border-radius: 4px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    text-align: center;
+}
+
+.pdf-link-button:hover {
+    background-color: #bf7207;
 }

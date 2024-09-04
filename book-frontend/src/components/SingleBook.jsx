@@ -4,52 +4,54 @@ import Api from '../axiosconfig';
 import '../styles/singlebook.css';
 
 const SingleBook = () => {
-    const {id}=useParams();
-    const[singlebook,setSinglebook]=useState([]);
+    const { id } = useParams();
+    const [singleBook, setSingleBook] = useState(null);
     const [loading, setLoading] = useState(false);
-    console.log(singlebook);
-    const router = useNavigate();
+    const navigate = useNavigate();
 
-    async function GetSingleBook(){
+    async function fetchSingleBook() {
         setLoading(true);
-        try{
-            const response = await Api.post("/book/getsinglebook",{bookId: id});
-            console.log(response)
-            if(response.data.success){
+        try {
+            const response = await Api.post("/book/getsinglebook", { bookId: id });
+            if (response.data.success) {
+                setSingleBook(response.data.book);
                 setLoading(false);
-                setSinglebook([response.data.book]);
-            } 
-        }
-        catch(error){
-            console.log(error);
+            }
+        } catch (error) {
+            console.error(error);
+            setLoading(false);
         }
     }
 
-    useEffect(()=>{
-        if(id){
-            GetSingleBook();
+    useEffect(() => {
+        if (id) {
+            fetchSingleBook();
         }
-       },[id]);
+    }, [id]);
 
-    return(
-        <div id="main">
-                {loading?(<div>
-                    <h1>Loading....</h1>                    
-                </div>):(
-                    <div id="allbooksshow">
-                    {singlebook.map((book)=>(
-                        <div id="sb-bookshow">
-                            <p><b>{book.title}</b></p>
-                            <img src={book.image}/>
-                            <p><b>Author</b>: {book.author}</p>
-                            <p><b>Published Year</b>: {book.publishedYear}</p>
-                            <p><b>Genre</b>: {book.genre}</p>
-                            <p><b>Summary</b>: {book.summary}</p>
-                        </div>
-                    ))}
+    return (
+        <div className="single-book-container">
+            {loading ? (
+                <div className="loading-message">
+                    <h1>Loading....</h1>
                 </div>
-                )} 
-                <button onClick={()=>router("/add-book")}>Add More Books</button>
+            ) : (
+                singleBook && (
+                    <div className="book-details">
+                        <h1 className="book-title">{singleBook.title}</h1>
+                        <img className="book-image" src={singleBook.image} alt={singleBook.title} />
+                        <p><strong>Author:</strong> {singleBook.author}</p>
+                        <p><strong>Published Year:</strong> {singleBook.publishedYear}</p>
+                        <p><strong>Genre:</strong> {singleBook.genre}</p>
+                        <p><strong>Summary:</strong> {singleBook.summary}</p>
+                        {singleBook.linktopdf && (
+                            <a href={singleBook.linktopdf} target="_blank" rel="noopener noreferrer" className="pdf-link-button">
+                                View PDF
+                            </a>
+                        )}
+                    </div>
+                )
+            )}
         </div>
     );
 }

@@ -1,42 +1,76 @@
-#allbooksshow{
+/* Booklist.css */
+.booklist-container {
+    padding: 20px;
+    background-color: #eef2f3;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.booklist-title {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #2d2d2d;
+}
+
+.loading-message {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
+    color: #999;
+}
+
+.book-list {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    gap: 20px;
+    justify-content: center;
 }
 
-#bookshow{
-    width: 30%;
-    height: 650px;
-    border: 2px solid black;
-    margin-top: 20px;
-}
-
-#bookshow:hover{
+.book-item {
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #ffffff;
+    padding: 15px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
     cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
 }
 
-#bookshow > img{
-    width: 86%;
-    height: 67%;
-    margin-top: 10px;
+.book-item:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
-#bookshow > p{
-    font-size: 20px;
-    line-height: 2;
+.book-image {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
 }
 
-#bookshow > p:nth-child(2){
-    margin-top: 20px;
+.book-item p {
+    font-size: 1rem;
+    margin: 10px 0;
+    color: #555;
 }
 
-#main > button{
-    margin-top: 20px;
-    margin-bottom: 20px;
+.add-book-button {
+    margin: 20px 0;
     width: 200px;
     height: 50px;
     font-size: 18px;
-    font-weight: 700;
-    background-color:brown;
-    color: white;
+    font-weight: 600;
+    background-color: #e67410;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.add-book-button:hover {
+    background-color: #a5530b;
 }

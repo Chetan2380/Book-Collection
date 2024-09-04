@@ -10,7 +10,7 @@ function Navbar(){
             
         <div className="Navbar2">
                 <div className="leftNavbar2">
-                    <div id='leftnavbarimg'><img alt="icon" src="https://www.freeiconspng.com/thumbs/book-icon/book-icon-black-good-galleries--24.jpg"/></div>
+                    <div id='leftnavbarimg'><img alt="icon" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4AYuFGgIsA4rAJQx8PHoRfNMynIBvjhE6svCNXovlw6qmiaDi98LKXHFM_pCmrmGYOkA&usqp=CAU"/></div>
                 </div>
                 <div className="rightNavbar2">
                     <div className="options">

@@ -1,23 +1,66 @@
-#ab-main{
-    background-color: antiquewhite;
-    height: 1000px;
+/* AddBook.css */
+.add-book-container {
+    background-color: #f8f9fa;
+    height: 114vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-#ab-main > form > input{
-    height: 40px;
-    width: 20%;
+.add-book-form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    height: 92vh;
+    margin-top: -30px;
+}
+
+.form-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.form-label {
+    display: block;
     margin-top: 10px;
+    font-weight: bold;
 }
 
-#ab-main > form > textarea{
+.form-input, .form-textarea {
+    width: calc(100% - 20px);
+    margin-top: 5px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.form-input {
     height: 40px;
-    width: 20%;
-    margin-top: 10px;
 }
 
-#ab-main > form > input:nth-child(26){
+.form-textarea {
+    height: 100px;
+}
+
+.submit-button {
+    width: 100%;
+    height: 40px;
+    margin-top: 15px;
     background-color: brown;
     color: white;
     font-weight: 500;
     font-size: 18px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 30px;
+}
+
+.submit-button:disabled {
+    background-color: #dcdcdc;
+    cursor: not-allowed;
 }
